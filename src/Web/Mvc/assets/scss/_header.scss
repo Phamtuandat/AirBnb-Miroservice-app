@@ -1,0 +1,112 @@
+.app_navbar{
+      a{
+            color: white;
+      }
+      background-color: #004274;
+      .app_navbar-body{
+            display: flex;
+            align-items: center;
+            height: 70px;
+      }
+      .app_navbar--content{
+            height: 70px;
+            .app_navbar-brand {
+                  text-decoration: none;
+                  font-size: x-large;
+                  margin-right: 30px;
+                  font-weight: bold;
+                  align-self: center;
+            }
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            a{
+                  font-size: large;
+            }
+            .app_nav-list{
+                  flex-grow: 1;
+                  display: flex;
+                  justify-content: flex-start;
+                  align-self: center;
+                  div{
+                        padding:0 15px;
+                        margin: 0 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        .app_nav-link {
+                              text-decoration: none;
+                              transition: all .3s ease-out 0s;
+                              &::after{
+                                    content: "";
+                                    position: absolute;
+                                    width: 0;
+                                    bottom: 0px;
+                                    right: 5px;
+                                    left: -5px;
+                                    height: 3px;
+                                    z-index: 1;
+                                    -webkit-transition: all .4s ease-out 0s;
+                                    -moz-transition: all .4s ease-out 0s;
+                                    -ms-transition: all .4s ease-out 0s;
+                                    -o-transition: all .4s ease-out 0s;
+                                    transition: all .4s ease-out 0s;
+                                    background: #00AEFF;
+                              }
+                              &:hover::after{
+                                    left: 0;
+                                    right: auto;
+                                    width: 100%;
+                                    -webkit-transition: all .4s ease-out 0s;
+                                    -moz-transition: all .4s ease-out 0s;
+                                    -ms-transition: all .4s ease-out 0s;
+                                    -o-transition: all .4s ease-out 0s;
+                                    transition: all .4s ease-out 0s;
+                              }
+                              &:hover {
+                                    color: #56a3de;
+                              }
+                        }
+                  }
+            }
+            button{
+                  margin: 5px 0;
+                  background-color: #00aeff;
+                  padding: 0 30px;
+                  color: white;
+            }
+      }
+}
+.header-bottom{
+      margin-top: 20px;
+      width: 100%;
+      height: 80px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      div{
+            padding: 16px 6px;
+            &:first-child{
+                  width: 380px;
+            }
+            input{
+                  height: 100%;
+                  width: 100%;
+            }
+            select{
+                  height: 100%;
+
+            }
+            button{
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background-color: #004274;
+                  color: white;
+            }
+          
+
+      }
+}

@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "VElaU5WnQzM12B98zRPL8qpMXAoq7fgn84Nl5jielwg=",
+  "Source": "PropertyApi",
+  "BasePath": "_content/PropertyApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PropertyApi\\wwwroot",
+      "Source": "PropertyApi",
+      "ContentRoot": "D:\\ASP.NET-project\\Microservice\\ShopContainer\\src\\Services\\PropertyApi\\wwwroot\\",
+      "BasePath": "_content/PropertyApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

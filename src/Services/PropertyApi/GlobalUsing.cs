@@ -1,0 +1,9 @@
+global using PropertyApi.Dto;
+global using PropertyApi.Models;
+global using PropertyApi.Repository;
+global using System.Linq.Expressions;
+global using PropertyApi.Services;
+global using PropertyApi.Data;
+global using PropertyApi.MappingProfiles;
+global using AutoMapper;
+global using Serilog;
