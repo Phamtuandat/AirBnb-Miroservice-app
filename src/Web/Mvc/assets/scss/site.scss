@@ -1,2 +1,113 @@
 @import "./header";
 @import "./geopify";
+@import "./property";
+@import "./home";
+
+.carousel-container {
+      max-width: 720px;
+      overflow: hidden;
+      .control-btn {
+                  cursor: pointer;
+                  margin: 0 5px;
+                  color:#000;
+                  border: none;
+                  font-size: 14px;
+                  border: solid 1px #ccc;
+                  z-index: 100;
+                  position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  text-align: center;
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  background-color: white;
+                  transition: all 0.2s ease;
+                  &:hover{
+                        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px;
+                  }
+            }
+      .left-btn{
+            left: 0;
+      }
+      .right-btn{
+            right: 0;
+      }
+      .disabled{
+            cursor: inherit;
+            opacity: 0.4;
+            &:hover {
+                        box-shadow: none;
+                  }
+      }
+      &::before{
+            content: """";
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            position: absolute;
+            width: 10%;
+            top: 0;
+            left: 0;
+            height: 100%;
+            z-index: 10;
+
+      }
+      &::after {
+            content: "" "";
+            background: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            position: absolute;
+            width: 10%;
+            top: 0;
+            right: 0;
+            height: 100%;
+            z-index: 10;
+
+      }
+}
+
+.carousel-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      padding: 0 30px;
+      .active {
+            border-bottom: solid 2px #3d4348;
+      }
+      
+}
+
+.category {
+      position: relative;
+      flex: 0 0 auto;
+      // width: 300px;
+      /* Adjust the width of each category card as needed */
+      /* Adjust the margin between categories as needed */
+      margin: 15px;
+      padding: 5px;
+      justify-content: center;
+      align-items: center;
+      font-size: small;
+      font-weight: 600;
+      opacity: 0.8;
+      cursor: pointer;
+      border-bottom: solid 2px #979fa500;
+      &:hover{
+            border-bottom: solid 2px #979fa5;
+      }
+      a{
+            text-decoration: none;
+            color: inherit;
+      }
+      
+      
+}
+
+
+
+
+.category_carousel{
+      div{
+            display: flex;
+            flex-direction: column;
+
+      }
+      
+}

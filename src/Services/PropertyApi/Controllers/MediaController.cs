@@ -1,6 +1,5 @@
 using System.Data.Entity.Core;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace PropertyApi.Controllers;
 [Route("api/[controller]")]

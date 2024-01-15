@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@geoapify/geocoder-autocomplete": "^2.0.1",
     "gulp-rename": "^2.0.0"
   },
   "devDependencies": {

@@ -280,3 +280,7 @@ d:\ASP.NET-project\Microservice\ShopContainer\src\Services\PropertyApi\obj\Debug
 D:\ASP.NET-project\Microservice\ShopContainer\src\Services\PropertyApi\bin\Debug\net7.0\PropertyApi.staticwebassets.runtime.json
 D:\ASP.NET-project\Microservice\ShopContainer\src\Services\PropertyApi\bin\Debug\net7.0\Serilog.dll
 D:\ASP.NET-project\Microservice\ShopContainer\src\Services\PropertyApi\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+d:\ASP.NET-project\Microservice\ShopContainer\src\Services\PropertyApi\obj\Debug\net7.0\PropertyApi.sourcelink.json
+D:\ASP.NET-project\Microservice\ShopContainer\src\Services\PropertyApi\bin\Debug\net7.0\Bogus.dll
+D:\ASP.NET-project\Microservice\ShopContainer\src\Services\PropertyApi\bin\Debug\net7.0\CountryData.dll
+D:\ASP.NET-project\Microservice\ShopContainer\src\Services\PropertyApi\bin\Debug\net7.0\CountryData.Bogus.dll

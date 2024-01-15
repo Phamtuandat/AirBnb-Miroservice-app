@@ -75,6 +75,19 @@
           }
         }
       },
+      "Bogus/34.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Bogus.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Bogus.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "BouncyCastle.Cryptography/2.2.1": {
         "type": "package",
         "compile": {
@@ -84,6 +97,40 @@
         },
         "runtime": {
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CountryData/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Compression.ZipFile": "4.3.0",
+          "System.Text.Json": "7.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/CountryData.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CountryData.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CountryData.Bogus/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Bogus": "34.0.2",
+          "CountryData": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/CountryData.Bogus.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CountryData.Bogus.dll": {
             "related": ".xml"
           }
         }
@@ -4171,7 +4218,7 @@
           }
         }
       },
-      "System.Text.Json/7.0.1": {
+      "System.Text.Json/7.0.3": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "7.0.0"
@@ -4422,6 +4469,25 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+    "Bogus/34.0.2": {
+      "sha512": "2KQAuMn3fLAQ2r6jeiffZnpv0bi3GCW3iRB2v1KeHIEBu8MNTh9dBlLTZwGvM0pr+9doKkU8L5JgCURmTmT88A==",
+      "type": "package",
+      "path": "bogus/34.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bogus.34.0.2.nupkg.sha512",
+        "bogus.nuspec",
+        "lib/net40/Bogus.dll",
+        "lib/net40/Bogus.xml",
+        "lib/net6.0/Bogus.dll",
+        "lib/net6.0/Bogus.xml",
+        "lib/netstandard1.3/Bogus.dll",
+        "lib/netstandard1.3/Bogus.xml",
+        "lib/netstandard2.0/Bogus.dll",
+        "lib/netstandard2.0/Bogus.xml"
+      ]
+    },
     "BouncyCastle.Cryptography/2.2.1": {
       "sha512": "A6Zr52zVqJKt18ZBsTnX0qhG0kwIQftVAjLmszmkiR/trSp8H+xj1gUOzk7XHwaKgyREMSV1v9XaKrBUeIOdvQ==",
       "type": "package",
@@ -4440,6 +4506,34 @@
         "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
         "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
         "packageIcon.png"
+      ]
+    },
+    "CountryData/4.3.0": {
+      "sha512": "ZOGWxpD77ZpuYLOYX4EIQImdNpkafmH/uxSpOMi5gFkkT/cIasJMdXJu1Tbc0wiS7LHI8WQ+CXVrxCWlBTlGkQ==",
+      "type": "package",
+      "path": "countrydata/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "countrydata.4.3.0.nupkg.sha512",
+        "countrydata.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/CountryData.dll",
+        "lib/netstandard2.0/CountryData.xml"
+      ]
+    },
+    "CountryData.Bogus/4.3.0": {
+      "sha512": "i2JSzlKtsYhprgiJhlA+irF7C75wfSoC+D6yGfL/WKAZDaH7ucXr3/UzCoelDKZPhOIxV3Dr93VfrzD5V0DlSg==",
+      "type": "package",
+      "path": "countrydata.bogus/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "countrydata.bogus.4.3.0.nupkg.sha512",
+        "countrydata.bogus.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/CountryData.Bogus.dll",
+        "lib/netstandard2.0/CountryData.Bogus.xml"
       ]
     },
     "EntityFramework/6.4.4": {
@@ -12150,10 +12244,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/7.0.1": {
-      "sha512": "OtDEmCCiNl8JAduFKZ/r0Sw6XZNHwIicUYy/mXgMDGeOsZLshH37qi3oPRzFYiryVktiMoQLByMGPtRCEMYbeQ==",
+    "System.Text.Json/7.0.3": {
+      "sha512": "AyjhwXN1zTFeIibHimfJn6eAsZ7rTBib79JQpzg8WAuR/HKDu9JGNHTuu3nbbXQ/bgI+U4z6HtZmCHNXB1QXrQ==",
       "type": "package",
-      "path": "system.text.json/7.0.1",
+      "path": "system.text.json/7.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12216,7 +12310,7 @@
         "lib/net7.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.7.0.1.nupkg.sha512",
+        "system.text.json.7.0.3.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -12749,6 +12843,7 @@
     "net7.0": [
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "CountryData.Bogus >= 4.3.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.13",
       "Microsoft.EntityFrameworkCore >= 7.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.13",
@@ -12759,7 +12854,8 @@
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.11",
       "Serilog >= 3.1.1",
       "Serilog.Sinks.Console >= 5.0.0",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.5.0",
+      "bogus >= 34.0.2"
     ]
   },
   "packageFolders": {
@@ -12808,6 +12904,10 @@
             "target": "Package",
             "version": "[12.0.1, )"
           },
+          "CountryData.Bogus": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.13, )"
@@ -12855,6 +12955,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.5.0, )"
+          },
+          "bogus": {
+            "target": "Package",
+            "version": "[34.0.2, )"
           }
         },
         "imports": [
@@ -12868,6 +12972,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -12876,7 +12998,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,91 @@
+@model Mvc.Areas.Property.ViewModels.PropertyViewModel;
+@{
+      var message = ViewBag.Message;
+}
+
+@if (Model != null)
+{
+
+      <div class="container property_detail">
+            <h3 class="property_detail__title mt-4 mb-4">
+                  @Model.Title
+            </h3>
+            <div class="property_detail__images">
+                  @if (Model.Medias != null)
+                  {
+                        @for (int i = 0; i < Model.Medias.Count; i++)
+                        {
+                              if (i == 0)
+                              {
+                                    <div class="image-item bigger">
+                                          <img src="@Model.Medias[i].Url" alt="">
+                                    </div>
+                                    continue;
+                              }
+                              <div class="image-item ">
+                                    <img src="@Model.Medias[i].Url" alt="">
+                              </div>
+                        }
+                  }
+
+            </div>
+            <div class="property_detail_content row my-3">
+                  <div class="property__info col-8">
+                        <div class="property_title">
+
+                              <h4>
+                                    Room in @Model.City, @Model.Country
+                              </h4>
+                              <div class="property__amenity">
+                                    <p>
+                                          @Model.NumberOfBedroom Bedrooms 2 Douple Beds. Private Bethroom
+                                    </p>
+                              </div>
+                        </div>
+                        <div class="property_cert">
+                              <div>
+                                    <span class="property_favorite">
+                                          Guest favorite
+                                    </span>
+                              </div>
+                              <div class="property_according d-lg-block d-sm-none">
+                                    <span>
+                                          One of the most loved homes on Airbnb, according to guests
+                                    </span>
+                              </div>
+                              <div class="property_cert_star">
+                                    <span>
+                                          @Model.AverageRate
+                                    </span>
+                                    <div>
+                                          <i class="fa-solid fa-star"></i>
+                                    </div>
+                              </div>
+                              <div class="property_cert_review">
+                                    <span>4</span>
+                                    <span>Reviews</span>
+                              </div>
+
+                        </div>
+                  </div>
+                  <div class="property__price col-lg-4 ">
+                        <span>
+                              $202 night
+                        </span>
+                        <div class="price_schedule">
+                              <input type="text" class=" form-control" placeholder=""
+                                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+                              <input type="text" class="form-control" placeholder=""
+                                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+}
+else
+{
+      <h3>
+            @message
+      </h3>
+}

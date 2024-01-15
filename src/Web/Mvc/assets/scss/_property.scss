@@ -1,0 +1,132 @@
+
+.property__card{
+      a{
+            text-decoration: none;
+            color: inherit;
+      }
+      .property__card__image {
+            border-radius: 7px;
+            overflow: hidden;
+            height: 301px;
+            object-fit: cover;
+      }
+            .card__body{
+                  justify-content: space-between;
+                  .property__card__content{
+                        text-align: start;
+                        width: 100%;
+                        div{
+                              flex-direction: column;
+                              font-weight: 400;
+                              opacity: 0.8;
+                        }
+                        .card__content__title {
+                              display: inline-block;
+                              max-width: 80%;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: nowrap;
+                              margin-bottom: 0;
+                        } 
+                        .card__content__price{
+                              span{
+                                    font-size: 14px;
+                                    font-weight: 400;
+                              }
+                        } 
+                  }
+                  .property__card__rating{
+                        display: inline-block;
+                        i{
+                              font-size: 12px;
+                        }
+                  }
+            }
+}
+.property_detail__images{
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-auto-rows: minmax(220px, 200px);
+      grid-auto-flow: dense;
+      justify-items: stretch;
+      .bigger{
+            grid-row: 1/3 ;
+            grid-column: 1/3 ;
+      }
+      .image-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            img{
+                  height: auto;
+                  vertical-align: middle;
+                  display: inline-block;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 7px;
+            }
+      }
+}
+.property_detail_content{
+      .property__info{
+            .property_title{
+                  margin: 20px 0;
+            }
+            .property_cert{
+                  font-weight: 500;
+                  padding: 30px 0;
+                  border: solid 1px #ccc;
+                  width: 100%;
+                  border-radius: 15px;
+                  display: grid;
+                  grid-template-columns: 1fr 4fr 1fr 1fr;
+                  text-align: center;
+                  span{
+                        text-align: center;
+                  }
+                  .property_favorite{
+                        padding-right:20px;
+                  }
+                  div{
+                        display:  flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-items: center;
+                        padding: 0 20px;
+                        font-size: large;
+                  }
+                  .property_cert_star{
+                        border-left: solid 1px #ccc;
+                  }
+                  .property_cert_review{
+                        border-left: solid 1px #ccc;
+                  }
+                  .property_according{
+                        border-left: solid 1px #ccc;
+                  }
+            }
+      }
+      .property__price{
+            margin-top: 24px;
+            padding: 20px;
+            font-size: large;
+            font-weight:  500;
+            border: solid 1px #ccc;
+            border-radius: 10px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            .price_schedule{
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+                  margin-top: 20px;
+                  input{
+                        border-radius: 6px;
+                        padding: 10px 8px;
+                  } 
+            }
+      }
+}

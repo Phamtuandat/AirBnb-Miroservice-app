@@ -1,4 +1,3 @@
-using System.Net;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,8 +28,12 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    Log.Information(" seeding database.");
+    await SeedData.EnsureSeedData(app);
+    Log.Information("Done seeding database. Exiting.");
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseCors("AllowSpecificOrigin");
 }
 app.UseStaticFiles(new StaticFileOptions
 {

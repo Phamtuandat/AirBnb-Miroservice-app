@@ -7,7 +7,7 @@ public class PaginatedItemsViewModel<TEntity> where TEntity : class
 
       public long Count { get; private set; }
 
-      public IEnumerable<TEntity> Data { get; private set; }
+      public IEnumerable<TEntity>? Data { get; private set; }
 
       public PaginatedItemsViewModel(int pageIndex, int pageSize, long count, IEnumerable<TEntity> data)
       {

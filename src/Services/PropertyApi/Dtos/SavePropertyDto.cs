@@ -15,4 +15,5 @@ public class SavePropertyDto
       public int MaxGuests { get; set; }
       public string City { get; set; }
       public string Country { get; set; }
+      public string[] Labels { get; set; }
 }

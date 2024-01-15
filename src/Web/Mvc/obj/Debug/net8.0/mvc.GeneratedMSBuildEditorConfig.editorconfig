@@ -17,59 +17,71 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = mvc
 build_property.RootNamespace = mvc
-build_property.ProjectDir = D:\ASP.NET-project\Microservice\ShopContainer\src\Web\Mvc\
+build_property.ProjectDir = d:\ASP.NET-project\Microservice\ShopContainer\src\Web\Mvc\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\ASP.NET-project\Microservice\ShopContainer\src\Web\Mvc
+build_property.MSBuildProjectDirectory = d:\ASP.NET-project\Microservice\ShopContainer\src\Web\Mvc
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Areas/Product/Views/Product/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XEluZGV4LmNzaHRtbA==
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Areas/Property/Views/Property/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvcGVydHlcVmlld3NcUHJvcGVydHlcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Areas/Product/Views/Product/ProductDetail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XFByb2R1Y3REZXRhaWwuY3NodG1s
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Areas/Property/Views/Property/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvcGVydHlcVmlld3NcUHJvcGVydHlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Areas/Product/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Areas/Property/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvcGVydHlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Areas/Product/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Areas/Property/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvcGVydHlcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Home/Index.cshtml]
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Home/Privacy.cshtml]
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/Error.cshtml]
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/_GeopifyPartial.cshtml]
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/_FilterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9GaWx0ZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/_GeopifyPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9HZW9waWZ5UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/_headerPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9oZWFkZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/_Paging.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/_ViewImports.cshtml]
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/_ViewStart.cshtml]
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/_Layout.cshtml]
+[d:/ASP.NET-project/Microservice/ShopContainer/src/Web/Mvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-x8p8g49oo3

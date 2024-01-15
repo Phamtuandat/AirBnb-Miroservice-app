@@ -16,6 +16,8 @@ public class UnitOfWork : IUnitOfWork
       private IRepository<PlaceType>? _placeTypeRepository;
       private IRepository<Review>? _reviewRepository;
       private IRepository<Property>? propertyRepository;
+      private IRepository<Label>? _labelRepository;
+      private IRepository<PropertyLabel>? _propertyLabelRepository;
       public IRepository<Property> PropertyRepository
       {
             get
@@ -64,8 +66,26 @@ public class UnitOfWork : IUnitOfWork
             }
       }
 
+      public IRepository<Label> LabelRepository
+      {
+            get
+            {
+                  _labelRepository ??= new LabelRepository(_context);
+                  return _labelRepository;
+            }
+      }
+      public IRepository<PropertyLabel> PropertyLabelRepository
+      {
+            get
+            {
+                  _propertyLabelRepository ??= new PropertyLabelRepository(_context);
+                  return _propertyLabelRepository;
+            }
+      }
+
       public async Task SaveChangeAsync()
       {
             await _context.SaveChangesAsync();
       }
+
 }

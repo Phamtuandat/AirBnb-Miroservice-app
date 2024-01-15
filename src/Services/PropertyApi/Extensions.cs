@@ -13,6 +13,18 @@ internal static class Extensions
             services.AddScoped<IReviewService, ReviewService>();
             services.AddScoped<IMediaService, MediaService>();
             services.AddScoped<ITypeService, TypeService>();
+            services.AddCors(options =>
+                  {
+                        options.AddPolicy("AllowSpecificOrigin",
+                                    builder =>
+                                    {
+                                          builder
+                                    .AllowAnyOrigin()
+                                    .AllowAnyMethod()
+                                    .AllowAnyHeader()
+                                    ;
+                                    });
+                  });
       }
 
       public static string GenerateSlug(this string phrase)

@@ -10,7 +10,7 @@ public interface IRepository<T>
       T? Get(string id);
       T Delete(T entity);
       IQueryable<T> All();
-      IEnumerable<T>? Find(Expression<Func<T, bool>> predicate);
+      IQueryable<T>? Find(Expression<Func<T, bool>> predicate);
       Task SaveChangesAsync();
       void DeleteRange(IEnumerable<T>? imageList);
 }

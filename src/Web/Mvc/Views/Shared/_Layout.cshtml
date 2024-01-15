@@ -7,13 +7,16 @@
     <title>@ViewData["Title"] - Mvc</title>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Mvc.styles.css" asp-append-version="true" />
+    <link href="~/lib/fontawesome-free/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <header>
-        <div class="header-top sticky-lg-top">
+    <header class="">
+        <div class="header-top ">
             <nav class="app_navbar">
                 <div class="app_navbar-body container">
                     <div class="d-flex w-100">
@@ -25,25 +28,25 @@
                                         asp-controller="home">Home</a>
                                 </div>
                                 <div class="app_nav-item">
-                                    <a asp-action="index" asp-area="product" asp-controller="product"
+                                    <a asp-action="index" asp-area="property" asp-controller="property"
                                         class="app_nav-link">Property</a>
                                 </div>
                                 <div class="app_nav-item">
-                                    <a asp-action="index" asp-area="product" asp-controller="product"
+                                    <a asp-action="index" asp-area="property" asp-controller="property"
                                         class="app_nav-link">
                                         About
                                     </a>
                                 </div>
                                 <div class="app_nav-item">
-                                    <a asp-action="index" asp-area="product" asp-controller="product"
+                                    <a asp-action="index" asp-area="property" asp-controller="property"
                                         class="app_nav-link">Blog</a>
                                 </div>
                                 <div class="app_nav-item">
-                                    <a asp-action="index" asp-area="product" asp-controller="product"
+                                    <a asp-action="index" asp-area="property" asp-controller="property"
                                         class="app_nav-link">Contact</a>
                                 </div>
                             </div>
-                            <div class="d-flex align-content-center p-2">
+                            <div class="d-flex align-content-center p-2 button__sigin">
                                 <button class="btn" type="button">Sign In</button>
                             </div>
                         </div>
@@ -51,24 +54,27 @@
                 </div>
             </nav>
         </div>
-        <div class="header-bottom">
-            @await Html.PartialAsync("_GeopifyPartial")
-        </div>
     </header>
-    <div class="container">
+    <div class="container-lg min-vh-100">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top ">
         <div class="container">
             &copy; 2023 - Mvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/fontawesome-free/js/all.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

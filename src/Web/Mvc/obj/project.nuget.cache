@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3HAziqPxgpLCMyqDeefzJpGNnBkvhAXv7rsxYdSywptN2kV0sAvCQlikG9FBRElcRSn2O0IKz7CTwbT3tjzHDA==",
+  "dgSpecHash": "V02a/pODHHKMeIoS6eXz4Afyk/ASE2varCdmV6JsUXu2bXGLEH15k04Cj7BrxMdj8/4cyfFsAdVvWDBwJUrTuw==",
   "success": true,
   "projectFilePath": "D:\\ASP.NET-project\\Microservice\\ShopContainer\\src\\Web\\Mvc\\mvc.csproj",
   "expectedPackageFiles": [
@@ -114,6 +114,7 @@
     "C:\\Users\\Pham Tuan Dat\\.nuget\\packages\\nuget.protocol\\6.3.1\\nuget.protocol.6.3.1.nupkg.sha512",
     "C:\\Users\\Pham Tuan Dat\\.nuget\\packages\\nuget.versioning\\6.3.1\\nuget.versioning.6.3.1.nupkg.sha512",
     "C:\\Users\\Pham Tuan Dat\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\Pham Tuan Dat\\.nuget\\packages\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
     "C:\\Users\\Pham Tuan Dat\\.nuget\\packages\\stackexchange.redis\\2.6.122\\stackexchange.redis.2.6.122.nupkg.sha512",
     "C:\\Users\\Pham Tuan Dat\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
     "C:\\Users\\Pham Tuan Dat\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",

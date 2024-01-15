@@ -4,37 +4,46 @@ public static class API
 {
       public static class Catalog
       {
-            public static string GetAllProducts(string baseUri, int page, int take, int? brand, int? type)
+            public static string GetProperties(string baseUri, int page, int take, string? host, string? type, string? sortOrder)
             {
                   var filterQs = "";
-
-                  if (type.HasValue)
+                  if (host != null && type != null)
                   {
-                        var brandQs = (brand.HasValue) ? brand.Value.ToString() : string.Empty;
-                        filterQs = $"/category/{type.Value}/brand/{brandQs}";
-
+                        filterQs = $"/type/{type}/host/{host}";
                   }
-                  else if (brand.HasValue)
+                  else if (host == null && type != null)
                   {
-                        var brandQs = (brand.HasValue) ? brand.Value.ToString() : string.Empty;
-                        filterQs = $"/type/all/brand/{brandQs}";
+                        filterQs = $"/type/{type}";
+                  }
+                  else if (host != null && type == null)
+                  {
+                        filterQs = $"/host/{host}";
                   }
                   else
                   {
                         filterQs = string.Empty;
                   }
 
-                  return $"{baseUri}items{filterQs}?pageIndex={page}&pageSize={take}";
+                  return $"{baseUri}items{filterQs}?sortBy={sortOrder}&lt=10000&gt=0&pageIndex={page - 1}&pageSize={take}";
+            }
+            public static string GetPropertyById(string baseUri, string id)
+            {
+                  return $"{baseUri}items/{id}";
+            }
+            public static string SearchProperties(string baseUri, int page, int take, string? city, string? country)
+            {
+                  var searhQs = $"?country={country}&city={city}";
+                  return $"{baseUri}items/search{searhQs}&sortBy=Title&lt=10000&gt=0&pageIndex={page - 1}&pageSize={take}";
             }
 
-            public static string GetAllBrands(string baseUri)
+            public static string GetAllHost(string baseUri)
             {
-                  return $"{baseUri}Brand";
+                  return $"{baseUri}Host";
             }
 
-            public static string GetAllCategories(string baseUri)
+            public static string GetAllTypes(string baseUri)
             {
-                  return $"{baseUri}Category";
+                  return $"{baseUri}Type";
             }
       }
 }

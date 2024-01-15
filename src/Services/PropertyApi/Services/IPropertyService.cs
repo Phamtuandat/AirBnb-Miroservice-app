@@ -1,3 +1,4 @@
+
 namespace PropertyApi.Services;
 
 public interface IPropertyService
@@ -5,7 +6,9 @@ public interface IPropertyService
       Task<Property> CreateAsync(SavePropertyDto saveProperty);
       Task<Property> UpdateAsync(SavePropertyDto saveProperty, string id);
       Task DeleteAsync(string Id);
-      ICollection<Property> GetAll(int pageIndex = 0, int pageSize = 10);
-      Property? GetById(string id);
-      ICollection<Property>? Find(Expression<Func<Property, bool>> predicate);
+      PaginatedItemsViewModel<PropertyViewModel> GetAll(int pageIndex, int pageSize, string? sortBy);
+      PropertyViewModel? GetById(string id);
+      PaginatedItemsViewModel<PropertyViewModel> GetPropertiesByLabel(string labelId, int pageIndex, int pageSize);
+      PaginatedItemsViewModel<PropertyViewModel> Find(Expression<Func<Property, bool>> predicate, int pageIndex, int pageSize);
+
 }

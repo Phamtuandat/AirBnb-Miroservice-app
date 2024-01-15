@@ -30,11 +30,15 @@ public class PropertyDbContext : DbContext
                   {
                         entityType.SetTableName(tableName.Substring(6));
                   }
+
             }
+            builder.Entity<PropertyLabel>().HasKey(x => new { x.PropertyId, x.LabelId });
       }
       public DbSet<PlaceType> Types { set; get; }
       public DbSet<Property> Properties { get; set; }
       public DbSet<Householder> Hosts { get; set; }
       public DbSet<Media> Medias { get; set; }
       public DbSet<Review> Reviews { get; set; }
+      public DbSet<Label> Labels { get; set; }
+      public DbSet<PropertyLabel> propertyLabels { get; set; }
 }

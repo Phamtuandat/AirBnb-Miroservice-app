@@ -19,5 +19,4 @@ public class Property
     public int MaxGuests { get; set; }
     public int AverageRate { get; set; }
     public string CreateAt { get; set; }
-    public ICollection<Media>? Medias { get; set; }
 }

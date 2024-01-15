@@ -30,11 +30,10 @@ public abstract class GenericRepository<T> : IRepository<T> where T : class
 
 
 
-      public virtual IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
+      public virtual IQueryable<T> Find(Expression<Func<T, bool>> predicate)
       {
             return _context.Set<T>()
-                  .AsQueryable()
-                  .Where(predicate).ToList();
+                  .Where(predicate).AsQueryable();
       }
 
       public virtual T? Get(string id)

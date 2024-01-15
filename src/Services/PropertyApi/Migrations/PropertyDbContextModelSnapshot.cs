@@ -54,16 +54,38 @@ namespace PropertyApi.Migrations
                     b.ToTable("Hosts");
                 });
 
+            modelBuilder.Entity("PropertyApi.Models.Label", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Labels");
+                });
+
             modelBuilder.Entity("PropertyApi.Models.Media", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
+
+                    b.Property<bool>("IsThumb")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("PhysicalPath")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PropertyId")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Url")
@@ -80,6 +102,9 @@ namespace PropertyApi.Migrations
             modelBuilder.Entity("PropertyApi.Models.PlaceType", b =>
                 {
                     b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImgUrl")
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
@@ -160,6 +185,21 @@ namespace PropertyApi.Migrations
                     b.ToTable("Properties");
                 });
 
+            modelBuilder.Entity("PropertyApi.Models.PropertyLabel", b =>
+                {
+                    b.Property<string>("PropertyId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LabelId")
+                        .HasColumnType("text");
+
+                    b.HasKey("PropertyId", "LabelId");
+
+                    b.HasIndex("LabelId");
+
+                    b.ToTable("propertyLabels");
+                });
+
             modelBuilder.Entity("PropertyApi.Models.Review", b =>
                 {
                     b.Property<string>("Id")
@@ -200,9 +240,13 @@ namespace PropertyApi.Migrations
 
             modelBuilder.Entity("PropertyApi.Models.Media", b =>
                 {
-                    b.HasOne("PropertyApi.Models.Property", null)
-                        .WithMany("Medias")
-                        .HasForeignKey("PropertyId");
+                    b.HasOne("PropertyApi.Models.Property", "Property")
+                        .WithMany()
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Property");
                 });
 
             modelBuilder.Entity("PropertyApi.Models.Property", b =>
@@ -224,6 +268,25 @@ namespace PropertyApi.Migrations
                     b.Navigation("Type");
                 });
 
+            modelBuilder.Entity("PropertyApi.Models.PropertyLabel", b =>
+                {
+                    b.HasOne("PropertyApi.Models.Label", "Label")
+                        .WithMany()
+                        .HasForeignKey("LabelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PropertyApi.Models.Property", "Property")
+                        .WithMany()
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Label");
+
+                    b.Navigation("Property");
+                });
+
             modelBuilder.Entity("PropertyApi.Models.Review", b =>
                 {
                     b.HasOne("PropertyApi.Models.Property", "Property")
@@ -233,11 +296,6 @@ namespace PropertyApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Property");
-                });
-
-            modelBuilder.Entity("PropertyApi.Models.Property", b =>
-                {
-                    b.Navigation("Medias");
                 });
 #pragma warning restore 612, 618
         }

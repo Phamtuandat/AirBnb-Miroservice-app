@@ -17,7 +17,10 @@ public class MediaService : IMediaService
             var media = _unitOfWork.MediaRepository.Get(id) ?? throw new ObjectNotFoundException();
             try
             {
-                  File.Delete(media.Url);
+                  if (!media.PhysicalPath.Contains("test_"))
+                  {
+                        File.Delete(media.Url);
+                  }
                   _unitOfWork.MediaRepository.Delete(media);
                   await _unitOfWork.SaveChangeAsync();
             }
@@ -60,9 +63,10 @@ public class MediaService : IMediaService
                               }
                               var media = new Media()
                               {
+                                    Id = Guid.NewGuid().ToString(),
+                                    PropertyId = model.PropertyId,
                                     Url = url,
                                     PhysicalPath = filePath,
-                                    Id = Guid.NewGuid().ToString()
                               };
                               media = _unitOfWork.MediaRepository.Add(media);
                               await _unitOfWork.SaveChangeAsync();

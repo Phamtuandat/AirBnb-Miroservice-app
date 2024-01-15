@@ -1,0 +1,98 @@
+@model Mvc.Models.FilterViewModel;
+
+<div class="carousel-container position-relative" id="carouselContainer">
+      <div class="carousel-wrapper category_carousel" id="carouselWrapper">
+            @foreach (var item in Model.Types)
+            {
+                  if (item.Id == Model.CurrentType?.Id)
+                  {
+                        <div class="category d-flex active">
+                              <a class="category-item d-flex flex-column" href="@Model.GenerateUrl(item.Id)">
+                                    <i class="fa-solid fa-house"></i>
+                                    @item.Name
+                              </a>
+                        </div>
+                  }
+                  else
+                  {
+                        <div class="category d-flex">
+                              <a class="category-item d-flex flex-column" href="@Model.GenerateUrl(item.Id)">
+                                    <i class="fa-solid fa-house"></i>
+                                    @item.Name
+                              </a>
+                        </div>
+                  }
+            }
+      </div>
+      <button class="control-btn left-btn" id="prevBtn" onclick="prevCategory()"><i
+                  class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="control-btn right-btn" onclick="nextCategory()"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+<script>
+      const carouselWrapper = document.getElementById('carouselWrapper');
+      const carouselContainer = document.getElementById('carouselContainer');
+      const prevBtn = document.getElementById('prevBtn');
+      const activeChild = carouselWrapper.querySelector('.active');
+      let currentIndex = Array.from(carouselWrapper.children).indexOf(activeChild);
+      function calculateTotalWidth(parentId) {
+            const parentElement = document.getElementById(parentId);
+            if (parentElement) {
+                  const childElements = parentElement.children;
+                  let totalWidth = 15;
+                  for (let i = 0; i < childElements.length; i++) {
+                        const rect = childElements[i].getBoundingClientRect();
+                        totalWidth += rect.width + 15;
+                  }
+                  return totalWidth;
+            } else {
+                  return 0;
+            }
+      }
+
+      function showCategory(index) {
+            const totalWidth = calculateTotalWidth("carouselWrapper");
+            const itemWidth = totalWidth / carouselWrapper.children.length;
+            const newPosition = -index * itemWidth;
+            carouselWrapper.style.transform = `translateX(${newPosition}px)`;
+      }
+
+      function nextCategory() {
+
+            let lastItem = carouselWrapper.lastElementChild
+            if (lastItem.getBoundingClientRect().right <= carouselContainer.getBoundingClientRect().right) {
+                  currentIndex = 0;
+                  showCategory(currentIndex);
+                  prevBtn.classList.add("disabled")
+                  return
+            } else {
+                  currentIndex = (currentIndex + 3) % (carouselWrapper.children.length);
+                  showCategory(currentIndex);
+            }
+            if (currentIndex > 0) {
+                  prevBtn.classList.remove("disabled")
+                  return
+            }
+      }
+
+      function prevCategory() {
+            if (currentIndex == 0) {
+                  return
+            }
+            currentIndex = (currentIndex - 3 + carouselWrapper.children.length) % carouselWrapper.children.length;
+            showCategory(currentIndex);
+            if (currentIndex == 0) {
+                  prevBtn.classList.add("disabled")
+                  return
+            }
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+            // Your code here, which will be executed when the DOM is fully loaded
+            if (currentIndex == 0) {
+                  prevBtn.classList.add("disabled")
+            }
+            showCategory(currentIndex);
+      });
+
+
+</script>

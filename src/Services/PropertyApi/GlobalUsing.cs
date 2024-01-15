@@ -7,3 +7,4 @@ global using PropertyApi.Data;
 global using PropertyApi.MappingProfiles;
 global using AutoMapper;
 global using Serilog;
+global using PropertyApi.ViewModels;

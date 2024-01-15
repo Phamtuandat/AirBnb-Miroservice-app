@@ -1,8 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="home_body">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <partial name="_FilterPartial" model="@ViewBag.typeModel" />
+    <div class="search-block">
+        @await Html.PartialAsync("_GeopifyPartial")
+    </div>
 </div>
