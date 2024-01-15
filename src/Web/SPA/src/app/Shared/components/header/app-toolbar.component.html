@@ -1,0 +1,70 @@
+<mat-toolbar class="header-toolbar">
+  <div class="header-filter">
+    <div class="header-searchBtn" (click)="openDialog()" type="button">
+      <span>
+        <i class="fas fa-search"></i>
+      </span>
+      <div class="header-searchBtn-context">
+        <span> Anywhere </span>
+        <span> Any week . any guests </span>
+      </div>
+    </div>
+    <button mat-icon-button>
+      <i class="fa-thin fa-filters"></i>
+    </button>
+  </div>
+</mat-toolbar>
+<div
+  #subnavViewport
+  *ngIf="!isLoading; else subnavLazyloading"
+  class="header-subnav"
+>
+  <div #subnavList class="subnav-list">
+    <ng-template ngFor let-item [ngForOf]="labels" let-i="index">
+      <div
+        class="subnav-item"
+        (click)="onLabelClick(item.id)"
+        [ngClass]="{ active: activeLabelId === item.id }"
+      >
+        <span>{{ item.name }}</span>
+        <img src="{{ item.imgUrl }}" alt="" />
+      </div>
+    </ng-template>
+  </div>
+  <button
+    (click)="onPreviousClick()"
+    class="action-btn before-btn"
+    mat-icon-button
+    [disabled]="translationX >= 0"
+  >
+    <mat-icon>navigate_before</mat-icon>
+  </button>
+
+  <button (click)="onNextClick()" class="action-btn next-btn" mat-icon-button>
+    <mat-icon>navigate_next</mat-icon>
+  </button>
+</div>
+<ng-container *ngIf="isMediumViewDown" #sidenavTemplate>
+  <mat-toolbar
+    id="bottomToolbar"
+    class="bottomToolbar"
+    [ngClass]="{ isScrollDown: isScrollDown }"
+  >
+    <button mat-button routerLink="/property">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <span> Explore </span>
+    </button>
+    <button mat-button routerLink="/wishlist">
+      <i class="fa-regular fa-heart"></i>
+      <span> Wishlists </span>
+    </button>
+    <button mat-button routerLink="/login">
+      <i class="fa-regular fa-user"></i>
+      <span> Sign In </span>
+    </button>
+  </mat-toolbar>
+</ng-container>
+
+<ng-template #subnavLazyloading>
+  <div class="lazy-subnav-list"></div>
+</ng-template>

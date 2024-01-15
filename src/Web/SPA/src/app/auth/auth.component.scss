@@ -1,0 +1,61 @@
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  form {
+    border: solid 1px #6a6a6a;
+    border-radius: 20px;
+    .form-header {
+      text-align: center;
+      h3 {
+        padding: 20px 0;
+        margin-bottom: 0;
+        font-weight: 500;
+      }
+      mat-divider {
+        background-color: rgb(205, 205, 205);
+      }
+      margin-bottom: 30px;
+    }
+    .form-body {
+      padding: 0 60px 40px;
+      .row-control {
+        width: 400px;
+        mat-form-field {
+          width: 100%;
+          mat-select {
+            width: 100%;
+          }
+        }
+      }
+      .row-actions {
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+  form.form-xs {
+    width: 100%;
+    .form-body {
+      padding: 0 20px;
+      .row-control {
+        width: 100%;
+        mat-form-field {
+          width: 100%;
+        }
+      }
+    }
+    border: none;
+    margin-top: 40px;
+    .form-header {
+      display: none;
+    }
+  }
+}

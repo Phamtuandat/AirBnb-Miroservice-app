@@ -1,0 +1,52 @@
+<mat-toolbar breakpointClass="auth-toolbar">
+  <div class="auth-header">
+    <h6>Log in or sign up</h6>
+  </div>
+</mat-toolbar>
+
+<div class="container">
+  <form
+    class="sign-in-form"
+    [formGroup]="authForm"
+    [ngClass]="{
+      'form-xs': screenSize === 'xs',
+      'form-md': screenSize === 'md',
+      'form-lg': screenSize === 'lg',
+      'form-xl': screenSize === 'xl',
+      'form-sm': screenSize === 'sm'
+    }"
+  >
+    <div class="form-header">
+      <h3>Log in or sign up</h3>
+      <mat-divider></mat-divider>
+    </div>
+    <div class="form-body">
+      <h2>Welcome to AirBnB</h2>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-select formControlName="countryCode">
+            <mat-option value="84">Vietname (+84)</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <span style="margin-right: 10px; opacity: 0.6" matTextPrefix>
+            +{{ authForm.value.countryCode }}</span
+          >
+          <input
+            matInput
+            placeholder="Enter phone number"
+            type="text"
+            formControlName="phoneNumber"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="row-control row-actions">
+        <button mat-raised-button color="warn" type="submit">Continue</button>
+      </div>
+    </div>
+  </form>
+</div>

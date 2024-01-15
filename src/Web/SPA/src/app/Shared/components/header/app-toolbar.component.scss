@@ -1,0 +1,181 @@
+mat-toolbar.header-toolbar {
+  .header-filter {
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+    align-items: center;
+    padding: 20px 10px 0 10px;
+    .header-searchBtn {
+      background-color: white;
+      width: 100%;
+      line-height: 20px;
+      font-size: small;
+      display: flex;
+      border-radius: 40px;
+      padding: 5px 15px;
+      align-items: center;
+      margin-right: 10px;
+      box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+      cursor: pointer;
+      .header-searchBtn-context {
+        display: flex;
+        flex-direction: column;
+        font-size: small;
+        margin-left: 10px;
+        > span:last-child {
+          font-weight: lighter;
+          opacity: 0.8;
+        }
+      }
+      > span:first-child {
+        font-size: large;
+      }
+    }
+    button {
+      border: solid 1px #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+  overflow: hidden;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  min-height: 80px;
+}
+.header-subnav {
+  padding-top: 10px;
+  background-color: #fff;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 70px;
+  .subnav-list {
+    position: absolute;
+    overflow: visible;
+    display: flex;
+    left: 0;
+    top: 0;
+    transition: all 0.5s;
+    height: 100%;
+    padding-left: 20px;
+    .subnav-item {
+      cursor: pointer;
+      opacity: 0.6;
+      font-size: small;
+      display: flex;
+      margin: 0 12px;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      transition: all 0.1s;
+      border-bottom: solid 2px #fff;
+      text-wrap: nowrap;
+      padding-bottom: 10px;
+      img {
+        display: block;
+        width: 25px;
+        height: 25px;
+        object-fit: cover;
+        padding-bottom: 10px;
+      }
+      &:hover {
+        border-bottom: solid 2px #6b6b6b;
+      }
+    }
+    .subnav-item.active {
+      opacity: 1;
+      border-bottom: solid 2px #000;
+    }
+  }
+  .action-btn {
+    position: absolute;
+    background-color: white;
+    border: solid 1px #ccc;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translatey(-50%);
+  }
+  .before-btn {
+    left: 0;
+  }
+  .next-btn {
+    right: 0;
+  }
+}
+.lazy-subnav-list {
+  background-color: #f0f0f0;
+  position: relative;
+  height: 70px;
+  overflow: hidden;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+    animation: loading 1.5s infinite linear;
+  }
+}
+
+@keyframes loading {
+  100% {
+    left: 100%;
+  }
+}
+
+mat-toolbar.bottomToolbar.isScrollDown {
+  bottom: -100px;
+}
+mat-toolbar.bottomToolbar {
+  z-index: 10000;
+  ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    li {
+      margin-bottom: 10px;
+    }
+    button {
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  button {
+    height: 100%;
+    padding: 20px;
+    span {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  transition: all 0.5s linear;
+}

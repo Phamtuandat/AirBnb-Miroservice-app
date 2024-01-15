@@ -1,0 +1,39 @@
+app-header {
+  width: 100%;
+}
+footer {
+  background-color: #f7f7f7;
+  font-size: smaller !important;
+  font-weight: lighter !important;
+  mat-grid-tile {
+    h3 {
+      font-weight: 500;
+    }
+    text-align: left;
+    mat-list-item {
+      padding-left: 0;
+      height: 30px;
+      span {
+        ruby-span: {
+        }
+      }
+    }
+  }
+  .copyrighter {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    font-weight: lighter;
+    div {
+      font-size: medium;
+      a {
+        padding-left: 10px;
+        text-decoration: none;
+        color: black;
+      }
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+}

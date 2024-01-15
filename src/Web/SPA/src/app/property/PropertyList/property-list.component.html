@@ -1,0 +1,61 @@
+<app-app-layout>
+  <mat-grid-list
+    [cols]="colNumber"
+    breakpointClass="properties"
+    gutterSize="16px"
+    rowHeight="400px"
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+    [infiniteScrollDisabled]="isLoading"
+  >
+    <mat-grid-tile *ngFor="let item of properties">
+      <div class="grid-item">
+        <app-property-card [property]="item"></app-property-card>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div *ngIf="loadTimes >= 2 && loadAvailability" class="properties-actions">
+    <h3>Continue exploring camping homes</h3>
+    <button
+      (click)="loadTimes = 0"
+      (click)="onScroll()"
+      mat-button
+      class="load-more-btn"
+    >
+      Show more
+    </button>
+  </div>
+
+  <ng-container *ngIf="isLoading">
+    <mat-grid-list
+      [cols]="colNumber"
+      class="lazy-properties"
+      breakpointClass="properties"
+      gutterSize="16px"
+      rowHeight="400px"
+      infiniteScroll
+      [infiniteScrollDistance]="1"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll()"
+      [infiniteScrollDisabled]="isLoading"
+    >
+      <mat-grid-tile *ngFor="let item of lazyLoadItems">
+        <div class="grid-item">
+          <div class="lazy-property-card">
+            <div class="card-media"></div>
+            <div class="card-details">
+              <div class="card-title">
+                <span class="title"></span>
+                <span class="sticker"></span>
+              </div>
+              <div class="card-date"></div>
+              <div class="card-price"></div>
+            </div>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </ng-container>
+</app-app-layout>

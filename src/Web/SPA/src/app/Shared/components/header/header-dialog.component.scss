@@ -1,0 +1,161 @@
+.plan-form-control {
+  position: relative;
+  width: 100%;
+
+  height: 100%;
+  .form-control-closeBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    margin: 10px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    border: solid 1px #ccc;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+    cursor: pointer;
+    &:hover {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    *:focus {
+      border: none;
+    }
+  }
+  padding-top: 60px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+
+  > div {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px 10px;
+    padding: 15px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+  > div.contraction {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    .date-range {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  > div.expanded {
+    padding: 20px 20px;
+    h1 {
+      font-weight: 500;
+    }
+  }
+  .where-input-field {
+    overflow: hidden;
+    .where-selection-list {
+      margin-top: 20px;
+      display: flex;
+      width: 720px;
+      justify-content: space-between;
+      cursor: pointer;
+      .where-selection {
+        width: calc(720px / 5);
+        margin-right: 20px;
+        img {
+          width: 100%;
+          margin-bottom: 10px;
+          border-radius: 10px;
+          border: solid 1px #ccc;
+          transition: all 0.4;
+          &:hover {
+            border: solid 1px #000;
+          }
+        }
+      }
+    }
+    .where-input {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      display: flex;
+      justify-content: start;
+      border-radius: 14px;
+      border: solid 1px #ccc;
+      input {
+        margin-left: 10px;
+        font-size: medium;
+        width: 100%;
+        border: none;
+      }
+      *:focus {
+        outline: none;
+      }
+    }
+  }
+  .when-input-field {
+    padding-top: 30px;
+    div {
+      margin: 20px 0;
+    }
+    .when-input-field-bt {
+      display: flex;
+      justify-content: space-between;
+      border-top: solid 2px #ccc;
+      padding: 20px;
+    }
+  }
+  .who-input-group {
+    padding: 30px;
+    .who-input-header {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: left;
+      span {
+        opacity: 0.6;
+      }
+    }
+    h1 {
+      font-weight: 500;
+    }
+    .who-input-item {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      align-items: center;
+      margin-top: 20px;
+      border-bottom: solid 1px #ccc;
+      label {
+        font-size: large;
+        font-weight: 400;
+      }
+      .who-input-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          border: solid 1px #ccc;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: small;
+          font-weight: lighter;
+        }
+        input {
+          width: 20px;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          border: none;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}

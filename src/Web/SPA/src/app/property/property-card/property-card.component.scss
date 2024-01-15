@@ -1,0 +1,145 @@
+/* property-card.component.scss */
+.property-card {
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+  display: grid;
+  .card-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    grid-row: 1 / 4;
+    position: relative;
+    background-color: #f0f0f0;
+    .dotlist-viewport {
+      width: 70px;
+      height: 20px;
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      .image-dot-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s linear;
+        animation-delay: 0.2s;
+
+        .image-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: white;
+          opacity: 0.6;
+          margin: 0 3px;
+          animation-delay: 0.2s;
+          transition: opacity 0.2s linear;
+        }
+        .image-dot.hidden {
+          opacity: 0;
+        }
+        .image-dot.left {
+          width: 6px;
+          height: 6px;
+        }
+        .image-dot.active {
+          opacity: 1;
+        }
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      );
+      animation: loading 1.5s infinite linear;
+    }
+    .image-btn {
+      z-index: 2;
+      position: absolute;
+      background-color: white;
+      border: solid 1px #ccc;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .image-btn.active {
+      opacity: 1;
+    }
+    .image-btn-previous.hidden {
+      opacity: 0;
+    }
+    .image-btn-previous {
+      left: 0;
+      margin-left: 10px;
+    }
+    .image-btn-next {
+      right: 0;
+      margin-right: 10px;
+    }
+    .card-images {
+      position: relative;
+      display: flex;
+      box-sizing: border-box;
+      transition: all 0.3s ease-in-out;
+      height: 100%;
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  .card-details {
+    margin-top: auto;
+
+    .card-title {
+      max-height: 1.6em; /* Limit to 3 lines */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+    .card-desc {
+      display: flex;
+      flex-direction: column;
+      opacity: 0.6;
+    }
+    .card-price {
+      font-size: 1.2em;
+      color: #000000;
+      font-weight: 500;
+      font-size: medium;
+      margin-top: 6px;
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  100% {
+    left: 100%;
+  }
+}

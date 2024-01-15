@@ -1,0 +1,69 @@
+<div
+  class="property-card"
+  (mouseenter)="handleMouseEnter(true)"
+  (mouseleave)="handleMouseEnter(false)"
+>
+  <div class="card-media">
+    <button
+      mat-icon-button
+      class="image-btn image-btn-previous"
+      [ngClass]="{ active: isMouseenter }"
+      (click)="onPreviousImageClick()"
+      [class.hidden]="activeImgIdx === 0"
+    >
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+    <div
+      class="card-images"
+      breakpointClass="card-images"
+      [style.transform]="'translateX(' + translateValue + '%)'"
+      routerLink="{{ property?.id }}"
+    >
+      <ng-container *ngFor="let item of property?.medias; let i = index">
+        <img
+          src="{{ item.url }}"
+          alt="{{ property?.locationDetail }}"
+          [ngClass]="{ active: i === activeImgIdx }"
+        />
+      </ng-container>
+    </div>
+    <div class="dotlist-viewport">
+      <div class="image-dot-list">
+        <ng-container *ngFor="let item of property?.medias; let i = index">
+          <div
+            class="image-dot"
+            [ngClass]="{
+              active: i === activeImgIdx,
+              hidden: (i > 4 && i - activeImgIdx > 2) || activeImgIdx - i > 2,
+              left: (i > 2 && i - activeImgIdx > 1) || i === 3,
+              right: i >= 1 && activeImgIdx - i > 1
+            }"
+            [style.transform]="
+              'translateX(' +
+              (activeImgIdx > 2 ? translateValue - 200 : 0) +
+              '%)'
+            "
+          ></div>
+        </ng-container>
+      </div>
+    </div>
+    <button
+      mat-icon-button
+      class="image-btn image-btn-next"
+      [ngClass]="{ active: isMouseenter }"
+      (click)="onNextImgClick()"
+    >
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
+  <div class="card-details" routerLink="{{ property?.id }}">
+    <h4 class="card-title">{{ property?.locationDetail }}</h4>
+    <div class="card-desc">
+      <span> 1,424 kilometers away </span>
+      <span> {{ handleDateRange() }} </span>
+    </div>
+    <p class="card-price">
+      {{ property?.pricePerNight | currency : "USD" }} <span> night</span>
+    </p>
+  </div>
+</div>

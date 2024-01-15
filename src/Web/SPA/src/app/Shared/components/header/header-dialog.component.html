@@ -1,0 +1,180 @@
+<div class="plan-form-control">
+  <button class="form-control-closeBtn" mat-dialog-close>
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <div
+    *ngIf="activeField === 'where'; else whereContraction"
+    class="where-input-field"
+    [ngClass]="{ expanded: activeField === 'where' }"
+  >
+    <h1>Where to?</h1>
+    <div class="where-input">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="string"
+        [(ngModel)]="destination"
+        placeholder="Search destination"
+        [value]="destination"
+      />
+    </div>
+    <div class="where-selection-list">
+      <ng-container *ngFor="let item of rcms">
+        <div class="where-selection" (click)="onSelectDestination(item.label)">
+          <img src="{{ item.imageUrl }}" alt="" />
+          <span>{{ item.label }}</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <ng-template #whereContraction>
+    <div (click)="activeField = 'where'" class="contraction">
+      <span>Where</span>
+      <span>{{ destination }}</span>
+    </div>
+  </ng-template>
+  <div
+    *ngIf="activeField === 'when'; else whenContraction"
+    class="when-input-field"
+    [ngClass]="{ active: activeField === 'when' }"
+  >
+    <h1>When you trip?</h1>
+    <div>
+      <app-datepicker (onDateChange)="handleDateRangeChange($event)">
+      </app-datepicker>
+      <div class="when-input-field-bt">
+        <button mat-button (click)="activeField = 'who'">Skip</button>
+        <button mat-raised-button (click)="activeField = 'who'" color="primary">
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+  <ng-template #whenContraction>
+    <div (click)="activeField = 'when'" class="contraction">
+      <p>When</p>
+      <div class="date-range">
+        {{ selectedDateRange }}
+      </div>
+    </div>
+  </ng-template>
+  <div
+    *ngIf="activeField === 'who'; else whoContraction"
+    class="who-input-group"
+    [ngClass]="{ active: activeField === 'who' }"
+  >
+    <h1>Who's comming?</h1>
+    <div class="who-input-item">
+      <div class="who-input-header">
+        <label for="adults">Adults</label>
+        <span>Ages 13 or above</span>
+      </div>
+      <div class="who-input-body">
+        <button
+          (click)="handleChangeQuantityOfQuest('adult', -1)"
+          mat-icon-button
+          [ngClass]="{ disable: guestNumber.adult === 0 }"
+          [disabled]="guestNumber.adult === 0"
+        >
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <input
+          type="number"
+          [(ngModel)]="guestNumber.adult"
+          name="adults"
+          id=""
+        />
+        <button
+          mat-icon-button
+          (click)="handleChangeQuantityOfQuest('adult', 1)"
+        >
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="who-input-item">
+      <div class="who-input-header">
+        <label for="children">Children</label>
+        <span>Ages 2–12</span>
+      </div>
+
+      <div class="who-input-body">
+        <button
+          (click)="handleChangeQuantityOfQuest('children', -1)"
+          mat-icon-button
+          [ngClass]="{ disable: guestNumber.children === 0 }"
+          [disabled]="guestNumber.children === 0"
+        >
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <input
+          type="number"
+          [(ngModel)]="guestNumber.children"
+          name="children"
+          id=""
+        />
+        <button
+          mat-icon-button
+          (click)="handleChangeQuantityOfQuest('children', 1)"
+        >
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="who-input-item">
+      <div class="who-input-header">
+        <label for="infants">Infants</label>
+        <span>Under 2</span>
+      </div>
+      <div class="who-input-body">
+        <button
+          (click)="handleChangeQuantityOfQuest('infants', -1)"
+          mat-icon-button
+          [ngClass]="{ disable: guestNumber.infants === 0 }"
+          [disabled]="guestNumber.infants === 0"
+        >
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <input
+          type="number"
+          [(ngModel)]="guestNumber.infants"
+          name="infants"
+          id=""
+        />
+        <button
+          mat-icon-button
+          (click)="handleChangeQuantityOfQuest('infants', 1)"
+        >
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="who-input-item" style="border: none; padding-bottom: 0">
+      <div class="who-input-header">
+        <label for="pets">Pets</label>
+        <a href=""> Bringing a service animal? </a>
+      </div>
+      <div class="who-input-body">
+        <button
+          (click)="handleChangeQuantityOfQuest('pet', -1)"
+          mat-icon-button
+          [ngClass]="{ disable: guestNumber.pet === 0 }"
+          [disabled]="guestNumber.pet === 0"
+        >
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <input type="number" name="pets" [(ngModel)]="guestNumber.pet" id="" />
+
+        <button mat-icon-button (click)="handleChangeQuantityOfQuest('pet', 1)">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <ng-template #whoContraction>
+    <div (click)="activeField = 'who'" class="contraction">
+      <p>Who</p>
+    </div>
+  </ng-template>
+</div>
